@@ -14,7 +14,7 @@ services:
       - UID=1000
       - GID=1000
       - ADMIN_USER=riceball
-      - ADMIN_PASSWORD=123456Qwe!!
+      - ADMIN_PASSWORD=MoreComplextPasswordPls
       - DB_TYPE=sqlite3
     volumes:
       - ./data:/data
