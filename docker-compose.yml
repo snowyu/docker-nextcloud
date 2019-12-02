@@ -9,16 +9,16 @@ services:
     image: wonderfall/nextcloud
     build:
       context: .
-      dockerfile: Dockerfile.15.0
+      dockerfile: Dockerfile.17.0
     environment:
       - UID=1000
       - GID=1000
-      - ADMIN_USER=mrrobot
-      - ADMIN_PASSWORD=supercomplicatedpassword
-      - DB_TYPE=sqlite
+      - ADMIN_USER=riceball
+      - ADMIN_PASSWORD=123456Qwe!!
+      - DB_TYPE=sqlite3
     volumes:
       - ./data:/data
       - ./config:/config
       - ./apps:/apps2
     ports:
-      - 8888:8888
+      - 80:8888
