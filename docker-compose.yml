@@ -13,9 +13,12 @@ services:
     environment:
       - UID=1000
       - GID=1000
-      - ADMIN_USER=riceball
+      - USER=abc
+      - ADMIN_USER=admin
       - ADMIN_PASSWORD=MoreComplextPasswordPls
       - DB_TYPE=sqlite3
+    env_file:
+      - .env
     volumes:
       - ./data:/data
       - ./config:/config
