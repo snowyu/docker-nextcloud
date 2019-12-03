@@ -3,6 +3,7 @@ version: '3'
 # This instance is using SQLite3 as database backend.
 # Please consider using a proper database like MariaDB or PostgreSQL
 # if you want to use this productive.
+# change the env var in your .env file https://docs.docker.com/compose/environment-variables/#the-env-file
 
 services:
   nextcloud:
@@ -11,14 +12,13 @@ services:
       context: .
       dockerfile: Dockerfile.17.0
     environment:
-      - UID=1000
-      - GID=1000
-      - USER=abc
-      - ADMIN_USER=admin
-      - ADMIN_PASSWORD=MoreComplextPasswordPls
-      - DB_TYPE=sqlite3
-    env_file:
-      - .env
+      - UID=$UID
+      - GID=$GID
+      - USER=$USER
+      - ADMIN_USER=$ADMIN_USER
+      - ADMIN_PASSWORD=$ADMIN_PASSWORD
+      - DB_TYPE=$DB_TYPE
+      - MEMORY_LIMIT=$MEMORY_LIMIT
     volumes:
       - ./data:/data
       - ./config:/config
